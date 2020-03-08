@@ -1,0 +1,22 @@
+{
+  "name": "form-validation-problem",
+  "version": "1.0.0",
+  "description": "springload form validation problem for Senior Software Developer position",
+  "main": "src/index.js",
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/mmcgahan/form-validation-problem.git"
+  },
+  "author": "mmcgahan <mike.mcgahan@gmail.com>",
+  "license": "MIT",
+  "scripts": {
+    "build": "rollup src/index.js --file build/index.js --format iife"
+  },
+  "bugs": {
+    "url": "https://github.com/mmcgahan/form-validation-problem/issues"
+  },
+  "homepage": "https://github.com/mmcgahan/form-validation-problem#readme",
+  "dependencies": {
+    "rollup": "^2.0.2"
+  }
+}
