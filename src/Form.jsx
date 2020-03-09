@@ -52,6 +52,13 @@ const handleSubmit = (values, setErrors) => e => {
 		});
 };
 
+export const LOCALSTORAGE_KEY = 'springload-form-validation';
+const saveLocal = values => {
+	if (window.localStorage) {
+		localStorage.setItem(LOCALSTORAGE_KEY, JSON.stringify(values));
+	}
+};
+
 /**
  * This form maintains the state of all form elements, including their
  * current values and error states. It uses _controlled inputs_ to ensure
@@ -70,6 +77,9 @@ const Form = props => {
 	const [values, setValues] = useState(props.values || defaults);
 	const [errors, setErrors] = useState(props.errors || {});
 
+	// quick and dirty support for navigating back to the form or refreshing the page
+	saveLocal(values);
+
 	const handleAnimalChange = animalName => e => {
 		const animal = values.animal.filter(a => a != animalName);
 		if (values.animal.includes(animalName)) {
@@ -81,7 +91,6 @@ const Form = props => {
 			});
 		}
 	};
-
 	return (
 		<form onSubmit={props.handleSubmit || handleSubmit(values, setErrors)}>
 			<h1>Fill out this awesome form</h1>
