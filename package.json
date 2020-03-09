@@ -10,13 +10,26 @@
   "author": "mmcgahan <mike.mcgahan@gmail.com>",
   "license": "MIT",
   "scripts": {
-    "build": "rollup src/index.js --file build/index.js --format iife"
+    "build": "webpack --mode development"
   },
   "bugs": {
     "url": "https://github.com/mmcgahan/form-validation-problem/issues"
   },
   "homepage": "https://github.com/mmcgahan/form-validation-problem#readme",
   "dependencies": {
-    "rollup": "^2.0.2"
+    "react": "^16.13.0",
+    "react-dom": "^16.13.0",
+    "yup": "^0.28.3"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.8.7",
+    "@babel/preset-env": "^7.8.7",
+    "@babel/preset-react": "^7.8.3",
+    "babel-loader": "^8.0.6",
+    "jest": "^25.1.0",
+    "prettier": "^1.19.1",
+    "static-server": "^2.2.1",
+    "webpack": "^4.42.0",
+    "webpack-cli": "^3.3.11"
   }
 }
